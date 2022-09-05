@@ -7,11 +7,7 @@ class EmailAddressParser
   end
 
   def parse
-    email_array = []
-    @email_addresses.split.each do |address|
-      email_array.push(address.delete_suffix(","))
-    end
-    email_array.uniq
+    @email_addresses.split.map { |address| address.delete_suffix(",") }.uniq
   end
 
 end
